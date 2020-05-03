@@ -44,7 +44,7 @@ const player = {
         if (player.n == str.length - 1) {
             console.log(`播放完成 ${player.n}`)
             window.clearInterval(player.interval_id)
-            player.player.interval_id = false
+            player.interval_id = false
         }
     
         //转成HTML的换行和空格
