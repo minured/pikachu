@@ -1,12 +1,10 @@
 import str from "./pikachuCSS.js"
 
-
 //面向对象的优化
 const player = {
-
     //基本属性
-    n: 0,
-    delay: 30,
+    n: 0, //是索引,到不了length
+    delay: 20,
     interval_id: undefined,
     playing : false,
     strHTML : "",
@@ -19,6 +17,7 @@ const player = {
 
     //一般一个对象有一个初始化方法
     init: () => {
+        console.log(`字符总长度: ${player.strLen}`)
         player.play() 
         player.bindEvents()
     },
@@ -34,17 +33,15 @@ const player = {
             if (player.events.hasOwnProperty(key)) {   //for in 会遍历到对象原型的属性
                 let value = player.events[key]
                 document.querySelector(key).onclick = player[value]
-                
             }
         }
     },
     writeStr : () => {
-
         //n 大于长度，清除interval
-        if (player.n == str.length - 1) {
-            console.log(`播放完成 ${player.n}`)
+        if (parseInt(player.n) === str.length -1 ) {
+            console.log(`播放完成, n: ${player.n}`)
             window.clearInterval(player.interval_id)
-            player.interval_id = false
+            player.playing = false
         }
     
         //转成HTML的换行和空格
@@ -67,7 +64,6 @@ const player = {
     },
     play : () => {
         //是否在播放
-        console.log(player.playing)
         if (player.playing === false) {
             //是否播放完
             if (player.n < player.strLen) {
@@ -81,7 +77,7 @@ const player = {
                 player.n = 0
             }
         } else {
-            console.log("存在id，已经在播放")
+            console.log(`已经在播放,id: ${player.interval_id}`)
         }
     },
     pause : () => {
@@ -90,23 +86,19 @@ const player = {
     },
     slow : () => {
         player.pause()
-        player.delay = 80
-        player.play() 
-
+        player.delay = 50
+        player.play()
     },
     normal : () => {
         player.pause()
-        player.delay = 30
-        player.play() 
-
+        player.delay = 20
+        player.play()
     },
     fast : () => {
         player.pause()
         player.delay = 0
-        player.play() 
-
+        player.play()
     }
-    
 }
 //初始化
 player.init()

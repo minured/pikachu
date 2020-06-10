@@ -9,11 +9,46 @@ const pikachuCSS = `.pikachu * {
     padding: 0;
     box-sizing: border-box;
 }
-
 .pikachu {
     background: rgb(255, 230, 0);
 }
-
+.nose {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    transform: translateX(-50%);
+    z-index: 5;
+    left: 50%;
+    top: 110px;  
+}
+.nose:hover {
+    transform-origin: center bottom;
+    animation: wave 250ms linear infinite; 
+}
+.nose .yuan {
+    border:1px solid black;
+    background: #000;
+    width: 20px;
+    height: 6px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -10px;
+    border-top-left-radius: 20px 10px; 
+    border-top-right-radius: 20px 10px;
+}
+.nose .san {
+    border: 10px solid black;
+    border-color: black transparent transparent;
+    border-bottom: none;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    left:50%;
+    margin-left: -10px;  
+    bottom: 0;
+    
+}
 @keyframes wave {
     0% {
         transform: rotate(0deg);
@@ -30,49 +65,6 @@ const pikachuCSS = `.pikachu * {
     100% {
         transform: rotate(0deg);
     }
-}
-.nose {
-    /* border: 1px solid black; */
-    position: relative;
-    width: 0px;
-    height: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 110px;
-    z-index: 5;
-    
-}
-.nose:hover {
-    transform-origin: center bottom;
-    animation: wave 250ms linear infinite;
-    
-}
-.nose .yuan {
-    border:1px solid black;
-    background: #000;
-    width: 20px;
-    height: 6px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -10px;
-    border-top-left-radius: 20px 10px; 
-    border-top-right-radius: 20px 10px;
-
-    /* 鼻子还要调整 */
-}
-
-.nose .san {
-    border: 10px solid black;
-    border-color: black transparent transparent;
-    border-bottom: none;
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    left:50%;
-    margin-left: -10px;  /* 左右两边的厚度加起来是20 */
-    bottom: 0;
-    
 }
 .eye {
     border: 3px solid black;
@@ -141,8 +133,6 @@ const pikachuCSS = `.pikachu * {
     margin-left: -100px;
     top: 125px;
 }
-
-
 .mouth .up .lip {
     border: 3px solid black;
     background:rgb(255, 230, 0);
@@ -151,7 +141,6 @@ const pikachuCSS = `.pikachu * {
     border-color: transparent transparent black transparent;
     position: absolute;
     z-index: 2;
-
 }
 .mouth .up .lip.left {
   /* border-radius: 0 0 0 30px; */
@@ -176,7 +165,6 @@ const pikachuCSS = `.pikachu * {
     height: 23px;
     position: absolute;
     top: -1px;
-    
 }
 .mouth .up .lip.left::before {  
     right: 0;
@@ -194,7 +182,6 @@ const pikachuCSS = `.pikachu * {
     overflow: hidden;
     z-index: 1;
     top: 8px;
-
 }
 .mouth .down .yuan1 {
     border: 3px solid black;
@@ -206,7 +193,6 @@ const pikachuCSS = `.pikachu * {
     left:0;
     border-radius: 100px/490px;
     overflow: hidden;
-
 }
 .mouth .down .yuan1 .yuan2 {
     /* border: 1px solid black; */

@@ -2,8 +2,7 @@
   "name": "pikachu",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "cssnano": "^4.1.10"
-  }
+  "repository": "git@github.com:minured/pikachu.git",
+  "author": "minured <1296900813@qq.com>",
+  "license": "MIT"
 }
