@@ -113,7 +113,7 @@ function eyeball() {
     let x = eye.getBoundingClientRect().left + 32;
     let y = eye.getBoundingClientRect().top + 32;
 
-    let radian = Math.atan2(event.pageY - y, event.pageX - x);
+    let radian = Math.atan2(event.pageX - x, event.pageY - y);
     // console.log(radian)
     let rot = radian * (180 / Math.PI) * -1 + 270;
 

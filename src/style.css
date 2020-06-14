@@ -39,6 +39,7 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 .buttons {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     position: fixed;
