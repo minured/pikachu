@@ -1,15 +1,14 @@
-//模块化
-const pikachuCSS = `.pikachu * {
+const pikachuCSS = `.draw * {
     margin: 0;
     padding:0;
     box-sizing: border-box;
 }
-.pikachu *::before, *::after {
+.draw *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.pikachu {
+.draw {
     background: rgb(255, 230, 0);
 }
 .nose {
