@@ -86,8 +86,9 @@ const pikachuCSS = `.pikachu * {
     border-radius: 50%;
     background: white;
     position: absolute;
-    top: -1px;
-    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3px;
 }
 .eye.left {
     transform: translateX(-195%);
